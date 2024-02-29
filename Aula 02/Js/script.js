@@ -1,3 +1,6 @@
+
+//Descomente os comentários abaixo para fazer o teste da index
+
 //document.write('Olá mundo!')
 
 //Imprime no console do navegador
