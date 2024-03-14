@@ -1,41 +1,34 @@
-
-//Maneira de declarar uma classe (construtor) que representa um livro:
-
-function Book (titulo, paginas, isbn) {
-    this.titulo = titulo;
-    this.paginas = paginas;
+function Book(title, pages, isbn) {
+    this.title = title
+    this.pages = pages
     this.isbn = isbn
-    
-    //Declarando uma função do método em privado, este método só ocorrerá aqui dentro
-    this.imprimirIsbn = function() {
-        console.log('Isbn: ' + this.isbn)
+    this.printIsbn = function(){
+        console.group('ISBN: ' + this.isbn)
     }
-
 }
 
-//Para instanciar a classe podemos usar o código a seguir
-var Book = new Book ('Estrutura de Dados', 406, '90-05-2003')
+//para instanciar essa classe, podemos usar o código a seguir:
+var book = new Book('Estrutura de Dados', 406, '20-05-2003')
 
-//Podemos também declarar uma função do método, veja:
-Book.prototype.imprimirTitulo = function () {
-    console.log(this.titulo)
+//Acessando suas propriedades
+
+console.log(book.title) //exibe o título do livro
+
+book.title = 'Estrutura de Dados e algoritmos com Javascript' //Atualiza o valor do título
+
+console.log(book.title) //exibe o valor atualizado
+
+console.log('Este livro possui: ' + book.pages + ' páginas')
+
+Book.prototype.printTitle = function(){
+    console.log(this.title);
 }
 
-//Acessando a propriedade
+//Imprimindo o título do book como uma função
 
-console.log(Book.titulo) //exibo o título do livro
-
-Book.titulo = ('Estrutura de Dados e algoritmos com Javascript') //atualiza o valor do título
-
-console.log(Book.titulo) //exibe o valor atualizado
-
-console.log('Este livro possui: ' + Book.paginas + ' páginas')
+book.printTitle()
 
 
-//Acessando a função método
+//Imprimindo o título do book da função adulta
+book.printIsbn()
 
-Book.imprimirTitulo()
-
-//Acessando a função Isbn
-
-Book.isbn()
