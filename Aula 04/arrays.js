@@ -164,4 +164,3 @@ numbers.splice(5, 0, 6, 7) //A partir do cinco, 0 não exclua, 6, 7 insira
 
 
 
-
