@@ -13,3 +13,6 @@ class aluno {
   console.log(aluno.idade)
   aluno.peso = 200
   console.log(aluno.peso)
+  
+
+
