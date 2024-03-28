@@ -19,19 +19,19 @@ function arrayVazio (numA, numB){
     
 
 
-    if(numA > numB){
+    if(numA < numB){
         console.log(`${numA}, ${numB}`)
 
     }
 
-    if(numA < numB){
+    if(numA > numB){
         console.log(`${numB}, ${numA}`)
     }
     
 
 }
 
-arrayVazio(1, 2)
+arrayVazio(25, 5)
 
 
 
