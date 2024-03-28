@@ -20,12 +20,12 @@ function arrayVazio (numA, numB){
 
 
     if(numA > numB){
-        console.log(`${numA} é maior do que ${numB}`)
+        console.log(`${numA}, ${numB}`)
 
     }
 
     if(numA < numB){
-        console.log(`${numB} é maior do que ${numA}`)
+        console.log(`${numB}, ${numA}`)
     }
     
 
