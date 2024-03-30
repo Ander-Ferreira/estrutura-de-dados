@@ -2,7 +2,7 @@
 08. Faça uma função para converter um número decimal em hexadecimal.
 */
 
-function decimalBINARIO(numeroDECIMAL) {
+function decimalHEXA(numeroDECIMAL) {
     let arrayVazio = []
     let resto
     let hexadecimal = ''
@@ -19,4 +19,4 @@ function decimalBINARIO(numeroDECIMAL) {
     return hexadecimal;
 }
 
-console.log(decimalBINARIO(1010));
+console.log(decimalHEXA(10));
