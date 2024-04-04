@@ -163,6 +163,16 @@ class Deque {
         return result
 
     }
+    removeBack(element){
+        if(this.isEmpty()){
+            return undefined
+        }
+
+        this.count--
+        const result = this.items[this.count]
+        delete this.items[this.count]
+        return result
+    }
     peekBack(){//devolve o último elemento
         return this.items[this.items.length - 1]
 
@@ -205,7 +215,7 @@ console.log(deque.toString()) //João, Pedro
 deque.addBack('Camila') //João, Pedro, Camila
 console.log(deque.size()) //exibe 3
 console.log(deque.isEmpty()) //exibe false
-//deque.removeBack() //Camila decide sair
+deque.removeBack() //Camila decide sair
 console.log(deque.toString())//Pedro
 deque.addFront('João') //João retorna para pedir uma informação
 console.log(deque.toString()) //João, Pedro
