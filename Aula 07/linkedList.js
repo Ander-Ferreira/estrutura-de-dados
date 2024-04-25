@@ -128,8 +128,7 @@ function linkedList(){
             
         }
         
-        /*Depois do elemento ser removido, o previousNode.next apontará para o nó que fica depois do nó que foi removido 
-        (currentNode.next), assim removendo o nó desejado da lista.
+        /*Depois do elemento ser removido, o previousNode.next apontará para o nó (currentNode.next) que fica depois do nó que foi removido, assim removendo o nó desejado da lista.
         */
 
         preivousNode.next = currentNode.next
