@@ -131,11 +131,42 @@ function linkedList(){
         /*Depois do elemento ser removido, o previousNode.next apontará para o nó (currentNode.next) que fica depois do nó que foi removido, assim removendo o nó desejado da lista.
         */
 
-        preivousNode.next = currentNode.next
+        preivousNode.next = currentNode.next //com isso faço um pulo de node exemplo 1 2 3 o previous está no 1, e vai diretamente par ao 3
 
     }
 
     //Depois de todas as condições terem sido cumpridas, diminuímos o tamanho desta lista
     length--
+  }
+
+
+  //CHECA SE A LISTA LINKADA ESTÁ VAZIA
+  this.empty = function(){ 
+    return length === 0 //se tiver vazia retorna 0
+
+  }
+
+  //RETORNA O INDEX DA LISTA LINKADA
+  this.indexOf = function(element){ 
+    let currentNode = head
+    let index = -1 // o index sempre começará como -1 (false)
+
+   //Agora quero que enquanto o currentNode não for null
+    while(currentNode){
+        index++ //O index irá incrementar e assim avançar de índice em índice pelos nós
+        
+        //Agora quero que se o currentNode.element for igual ao element que passei
+        if(currentNode.element === element){
+            return index //Retorne o index
+        }
+
+        //Se o currentNode não for igual ao element
+        currentNode = currentNode.next
+    }
+
+    //Se não for achado o element no loop while, retornaremos -1 (false)
+
+    return -1
+    
   }
 }
