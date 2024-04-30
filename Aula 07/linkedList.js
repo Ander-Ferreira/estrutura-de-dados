@@ -149,7 +149,7 @@ function linkedList(){
   //RETORNA O INDEX DA LISTA LINKADA
   this.indexOf = function(element){ 
     let currentNode = head
-    let index = -1 // o index sempre começará como -1 (false)
+    let index = -1 // o index sempre começará como -1, para ir passando pelos indices 0, 1, 2 e assim por diante 
 
    //Agora quero que enquanto o currentNode não for null
     while(currentNode){
@@ -169,4 +169,66 @@ function linkedList(){
     return -1
     
   }
+//RETORNA O ELEMENTO DO ÍNDICE (INDEX) QUE PASSAMOS QUE PASSAMOS
+this.elementAt = function (index){
+    let currentNode = head //Começamos do início
+    
+    //O contador começará do indice 0, quero que enquanto o count (contador) for menor do que o número do indice que passei
+    //Que ele incremente e avance de indice em indice
+    for(count = 0; count < index; count++){
+
+       //E também quero que o currentNode avance junto com o (indice) index
+        let currentNode = currentNode.next
+
+
+    }
+    //Quando encontrarmos o index (indice) com o laço for, quero que passe o element (elemento) do currentNode que está naquele indice
+    return currentNode.element
+}
+
+//ADICIONA UM ELEMENTO AO INDEX (INDICE) QUE EU QUERO
+
+this.addAt = function(index, element){ //Passo o indice e o elemento como parametros porque quero adicionar o elemento baseado no indice que passei
+
+//Como quero adicionar, sempre preciso criar um node herdando a estrutura do Node que já fizemos lá em cima
+let node = new Node(element)
+
+//Preciso do previousNode também
+let previousNode
+
+let currentIndex = 0
+
+//Faço uma verificação para ver se o index (indice) que passei é maior do que o número de indices da lista
+
+if(index > length){
+    return false
+}
+
+//Faço uma verificação para ver se o index que passei é o primeiro
+if(index === 0){
+    
+    //Se for, quero que conecte o novo node ao currentNode
+    node.next = currentNode
+   
+    //Agora precisamos atualizar o ponteiro inicial para apontar para o novo nó adicionado
+    head = node
+}
+else{ //Se não for o index que passamos
+    
+    while(currentIndex < index){//Enquanto o currentIndex for menor do que o index que passamos
+        currentIndex++
+        previousNode = currentNode
+        currentNode = currentNode.next
+
+    }
+    //Depois do loop ter achado o indice, adiciono o novo nó ao currentNode
+    node.next = currentNode
+    
+    //Atualizamos o previousNode para apontar para o novo nó, inserindo-o na posição correta da lista.
+    previousNode.next = node
+}
+//Incremento o tamanho da nossa list apara comportar o novo node
+length ++
+}
+
 }

@@ -47,47 +47,91 @@ function listaLinkada() {
     }
     */
 
-   this.remove = function(element){
-    let atual = inicio
-    let anterior
-    
-    if(atual.element === element){
-        inicio = atual.next
+    this.remove = function (element) {
+        let atual = inicio
+        let anterior
+
+        if (atual.element === element) {
+            inicio = atual.next
+        }
+        else {
+            while (atual.element !== element) {
+                anterior = atual
+                atual = atual.next
+            }
+            anterior.next = atual.next
+
+        }
+        length--
     }
-    else{
-        while(atual.element !== element){
-            anterior = atual
+
+    this.isEmpty = function () {
+        return length === 0
+    }
+
+    this.indexOf = function (element) {
+        let atual = inicio
+
+        let indice = -1
+
+        while (atual) {
+            indice++
+            if (atual.element === element) {
+                return indice
+            }
             atual = atual.next
+
         }
-        anterior.next = atual.next
+
+        return -1
+    }
+
+    this.elementAt = function (index) {
+        let atual = inicio
+
+        for (contador = 0; contador < index; contador++) {
+            let atual = atual.next
+        }
+
+        return atual.element
+    }
+
+    this.addAt = function (index, element) {
+
+        let atual = head
+        let anterior
+        let indexAtual = 0
+
+        let node = new Node(element)
+
+        if (index > length) {
+            return false
+        }
+
+
+        if (index === 0) {
+            node.next = atual
+            head = node
+        }
+
+        else {
+            while (indexAtual < index) {
+                indexAtual++
+                if (indexAtual === index) {
+                    anterior = atual
+                    atual = atual.next
+                }
+                node.next = atual
+                anterior.next = node
+            }
+        }
+        length ++
+
 
     }
-    length--
-   }
 
-   this.isEmpty = function(){
-    return length === 0
-   }
 
-   this.indexOf = function (element){
-     let atual = inicio
 
-     let indice = -1
-
-     while(atual){
-        indice++
-        if(atual.element === element){
-            return indice
-        }
-        atual = atual.next
-        
-     }
-
-     return -1
-   }
-   
-
-   
 }
 
 
