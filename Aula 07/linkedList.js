@@ -100,7 +100,8 @@ function linkedList(){
 
     if(currentNode.element === element){
         
-        //Se o currentNode que queremos remover for o head, já apontaremos para o próximo node.
+        //Se o currentNode que queremos remover for o head, já apontaremos para o próximo node. 
+        //Sempre pularemos o node que queremos remover
         
         head = currentNode.next
     }
